@@ -1,39 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiron Ang</title>
-    <style>
-        body {
-            font-family: monospace;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiron Ang</title>
+  <style>
+    body {
+      font-family: monospace;
+      text-align: center;
+      padding: 50px;
+    }
+
+    button {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 8px 20px;
+      border: 1px solid black;
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    button:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .translatable {
+      margin: 10px 0;
+    }
+  </style>
 </head>
 <body>
-    <h1>KIRON ANG</h1>
-    <p id="greeting">Hi!</p>
-    <button id="langToggle">Español</button>
-    <script>
-        const greeting = document.getElementById('greeting');
-        const button = document.getElementById('langToggle');
-        const html = document.documentElement;
 
-        let isEnglish = true;
+  <h1 class="translatable" data-en="KIRON ANG" data-es="KIRON ANG"></h1>
 
-        button.addEventListener('click', () => {
-            if (isEnglish) {
-                greeting.textContent = '¡Hola!';
-                html.lang = 'es';
-                button.textContent = 'English';
-            } else {
-                greeting.textContent = 'Hi!';
-                html.lang = 'en';
-                button.textContent = 'Español';
-            }
-            isEnglish = !isEnglish;
-        });
-    </script>
+  <p class="translatable" data-en="Hi!" data-es="¡Hola!"></p>
+  <p class="translatable" data-en="This is paragraph 1." data-es="Este es el párrafo 1."></p>
+  <p class="translatable" data-en="This is paragraph 2." data-es="Este es el párrafo 2."></p>
+  <p class="translatable" data-en="This is paragraph 3." data-es="Este es el párrafo 3."></p>
+  <p class="translatable" data-en="This is paragraph 4." data-es="Este es el párrafo 4."></p>
+  <p class="translatable" data-en="This is paragraph 5." data-es="Este es el párrafo 5."></p>
+  <p class="translatable" data-en="This is paragraph 6." data-es="Este es el párrafo 6."></p>
+  <p class="translatable" data-en="This is paragraph 7." data-es="Este es el párrafo 7."></p>
+  <p class="translatable" data-en="This is paragraph 8." data-es="Este es el párrafo 8."></p>
+  <p class="translatable" data-en="This is paragraph 9." data-es="Este es el párrafo 9."></p>
+  <p class="translatable" data-en="This is paragraph 10." data-es="Este es el párrafo 10."></p>
+
+  <button id="langToggle">Español</button>
+
+  <script>
+    const toggleButton = document.getElementById('langToggle');
+    const elements = document.querySelectorAll('.translatable');
+    const html = document.documentElement;
+
+    let currentLang = 'en';
+
+    toggleButton.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      html.lang = currentLang;
+
+      elements.forEach(el => {
+        el.textContent = el.dataset[currentLang];
+      });
+
+      toggleButton.textContent = currentLang === 'en' ? 'Español' : 'English';
+    });
+  </script>
 </body>
 </html>
