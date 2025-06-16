@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Declare document encoding and viewport for responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Page title as shown in browser tab -->
     <title>Kiron Ang</title>
+    <style>
+        body {
+            font-family: monospace;
+            text-align: center;
+        }
+    </style>
 </head>
-<!-- CSS style rulesets -->
-<style>
-    body {
-        font-family: monospace;
-        text-align: center;
-    }
-</style>
 <body>
-    <!-- Main heading -->
     <h1>KIRON ANG</h1>
-    <p>Hi!</p>
+    <p id="greeting">Hi!</p>
+    <button id="langToggle">Español</button>
+    <script>
+        const greeting = document.getElementById('greeting');
+        const button = document.getElementById('langToggle');
+        const html = document.documentElement;
+
+        let isEnglish = true;
+
+        button.addEventListener('click', () => {
+            if (isEnglish) {
+                greeting.textContent = '¡Hola!';
+                html.lang = 'es';
+                button.textContent = 'English';
+            } else {
+                greeting.textContent = 'Hi!';
+                html.lang = 'en';
+                button.textContent = 'Español';
+            }
+            isEnglish = !isEnglish;
+        });
+    </script>
 </body>
 </html>
