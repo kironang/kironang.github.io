@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiron Ang</title>
+  <style>
+    :root {
+      --font-family: monospace;
+      --color-bg: #f7f7f7;
+      --color-text: #222;
+      --color-primary: #ccc;
+      --color-secondary: #eee;
+      --color-white: #ffffff;
+      --spacing: 1rem;
+      --border-radius: 6px;
+      --max-width: 800px;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--spacing);
+      background: var(--color-white);
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .menu-btn {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .lang-toggle {
+      font-size: 0.9rem;
+      background: var(--color-secondary);
+      border: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+    }
+
+    nav.sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: var(--color-white);
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      padding: 2rem 1rem;
+      transition: left 0.3s ease;
+      z-index: 999;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 0.75rem 0;
+      font-weight: 500;
+      border-bottom: 1px solid #eee;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 998;
+    }
+
+    .overlay.show {
+      display: block;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing);
+      margin: 2rem 0 1rem;
+      flex-wrap: wrap;
+    }
+
+    .tabs button {
+      background: var(--color-secondary);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      border-radius: var(--border-radius);
+      font-weight: 500;
+    }
+
+    .tabs button.active,
+    .tabs button:focus {
+      background: var(--color-primary);
+      outline: 2px solid #444;
+    }
+
+    .tab-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--spacing);
+      background: var(--color-white);
+      border-radius: 10px;
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="menu-btn" aria-label="Toggle menu" onclick="toggleSidebar()">☰</button>
+    <div class="logo">KIRON ANG</div>
+    <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">EN | ES</button>
+  </header>
+
+  <nav class="sidebar" id="sidebar" aria-label="Sidebar navigation">
+    <a href="#">Home</a>
+    <a href="#">Information</a>
+    <a href="#">Informatics</a>
+    <a href="#">Infographics</a>
+  </nav>
+  <div class="overlay" id="overlay" onclick="toggleSidebar()" aria-hidden="true"></div>
+
+  <main>
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" onclick="openTab('information')" role="tab" aria-pressed="true"><span class="en">Information</span><span class="es" style="display:none;">Información</span></button>
+      <button class="tab-btn" onclick="openTab('informatics')" role="tab" aria-pressed="false"><span class="en">Informatics</span><span class="es" style="display:none;">Informática</span></button>
+      <button class="tab-btn" onclick="openTab('infographics')" role="tab" aria-pressed="false"><span class="en">Infographics</span><span class="es" style="display:none;">Infografías</span></button>
+    </div>
+
+    <section class="tab-content active" id="tab-information" role="tabpanel">
+      <h2><span class="en">Information</span><span class="es" style="display:none;">Información</span></h2>
+      <p class="en">Hello! I’m Kiron Ang, a bioinformatics major at Baylor University. I’m passionate about data, discovery, and creative expression through code, music, and photography. This site showcases who I am and what I do.</p>
+      <p class="es" style="display:none;">¡Hola! Soy Kiron Ang, estudiante de bioinformática en la Universidad de Baylor. Me apasionan los datos, el descubrimiento y la expresión creativa a través del código, la música y la fotografía. Este sitio muestra quién soy y qué hago.</p>
+    </section>
+
+    <section class="tab-content" id="tab-informatics" role="tabpanel">
+      <h2><span class="en">Informatics</span><span class="es" style="display:none;">Informática</span></h2>
+      <p class="en">This section will feature academic projects, bioinformatics pipelines, data analysis scripts, and other nerdy things that excite me. GitHub links, datasets, and research blurbs to come!</p>
+      <p class="es" style="display:none;">Esta sección incluirá proyectos académicos, pipelines de bioinformática, scripts de análisis de datos y otras cosas geek que me entusiasman. ¡Próximamente enlaces de GitHub, conjuntos de datos y fragmentos de investigación!</p>
+    </section>
+
+    <section class="tab-content" id="tab-infographics" role="tabpanel">
+      <h2><span class="en">Infographics</span><span class="es" style="display:none;">Infografías</span></h2>
+      <p class="en">Here you'll find my photography, music compositions, writing samples, and creative projects. It’s my portfolio, curated in one place.</p>
+      <p class="es" style="display:none;">Aquí encontrarás mi fotografía, composiciones musicales, ejemplos de escritura y proyectos creativos. Es mi portafolio, todo en un solo lugar.</p>
+    </section>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('show');
+    }
+
+    function openTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      document.querySelector(`.tab-btn[onclick="openTab('${tabId}')"]`).classList.add('active');
+      document.querySelector(`.tab-btn[onclick="openTab('${tabId}')"]`).setAttribute('aria-pressed', 'true');
+      document.getElementById(`tab-${tabId}`).classList.add('active');
+    }
+
+    function toggleLanguage() {
+      const langBtn = document.querySelector('.lang-toggle');
+      const isEnglish = langBtn.textContent.includes('EN');
+      langBtn.textContent = isEnglish ? 'ES | EN' : 'EN | ES';
+
+      document.querySelectorAll('.en').forEach(el => el.style.display = isEnglish ? 'none' : 'inline');
+      document.querySelectorAll('.es').forEach(el => el.style.display = isEnglish ? 'inline' : 'none');
+    }
+  </script>
+</body>
+</html>
