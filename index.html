@@ -8,62 +8,24 @@
     * {
       font-family: monospace;
       text-align: center;
+      color: white;
+      background-color: black;
     }
   </style>
 </head>
 <body>
-
-  <h1 class="translatable" data-en="KIRON ANG" data-es="KIRON ANG"></h1>
-
-  <p class="translatable" 
-     data-en="Hello! This is the first paragraph in English. It contains five full sentences. Each sentence is meant to simulate real content. This should be clear and readable. Thank you for reading." 
-     data-es="¡Hola! Este es el primer párrafo en español. Contiene cinco oraciones completas. Cada oración simula contenido real. Esto debe ser claro y legible. Gracias por leer."></p>
-
-  <p class="translatable" 
-     data-en="Welcome to the second paragraph. We're continuing with another five English sentences. This helps illustrate scalability. Longer content should still be easy to manage. Keep everything readable and simple." 
-     data-es="Bienvenido al segundo párrafo. Continuamos con otras cinco oraciones en español. Esto ayuda a ilustrar la escalabilidad. El contenido más largo aún debe ser fácil de manejar. Mantén todo legible y simple."></p>
-
-  <p class="translatable" 
-     data-en="This is paragraph three. It again includes five sample sentences. The purpose is to test layout and switching. Make sure it looks consistent. Keep translations accurate and aligned." 
-     data-es="Este es el párrafo tres. Nuevamente incluye cinco oraciones de muestra. El propósito es probar el diseño y el cambio. Asegúrate de que se vea consistente. Mantén las traducciones precisas y alineadas."></p>
-
-  <p class="translatable" 
-     data-en="We're now in the fourth paragraph. More sentences follow for consistency. Each section mirrors a typical content block. This makes it scalable for real use. Thanks for following along." 
-     data-es="Ahora estamos en el cuarto párrafo. Siguen más oraciones por consistencia. Cada sección refleja un bloque de contenido típico. Esto lo hace escalable para uso real. Gracias por seguir leyendo."></p>
-
-  <p class="translatable" 
-     data-en="Fifth paragraph here. Testing multilingual setup at scale. Avoiding redundancy keeps things clean. Five more sentences keep the format. Let's keep going strong." 
-     data-es="Quinto párrafo aquí. Probando la configuración multilingüe a escala. Evitar la redundancia mantiene todo limpio. Cinco oraciones más mantienen el formato. Sigamos con fuerza."></p>
-
-  <p class="translatable" 
-     data-en="We're halfway through the ten. This demonstrates the system's efficiency. Even long content loads cleanly. Switching languages should remain smooth. Great progress so far." 
-     data-es="Estamos a mitad de los diez. Esto demuestra la eficiencia del sistema. Incluso el contenido largo se carga limpiamente. Cambiar idiomas debe seguir siendo fluido. Gran progreso hasta ahora."></p>
-
-  <p class="translatable" 
-     data-en="Paragraph seven is here. Again, five clear sentences in English. Everything still stays organized. Language toggling is consistent. Keep structure predictable." 
-     data-es="Aquí está el párrafo siete. Nuevamente, cinco oraciones claras en inglés. Todo sigue estando organizado. El cambio de idioma es consistente. Mantén la estructura predecible."></p>
-
-  <p class="translatable" 
-     data-en="Eighth paragraph arrives. We're seeing how reusable this is. No duplication of content is needed. Just data attributes are used. Works well with longer text." 
-     data-es="Llega el octavo párrafo. Estamos viendo cuán reutilizable es esto. No se necesita duplicación de contenido. Solo se usan atributos de datos. Funciona bien con textos más largos."></p>
-
-  <p class="translatable" 
-     data-en="Now the ninth paragraph. We continue testing text length. Five sentences remain a solid test case. Everything loads dynamically. Content remains clean." 
-     data-es="Ahora el noveno párrafo. Continuamos probando la longitud del texto. Cinco oraciones siguen siendo una buena prueba. Todo se carga dinámicamente. El contenido se mantiene limpio."></p>
-
-  <p class="translatable" 
-     data-en="Final paragraph, number ten. Thanks for reading this long sample. This shows real-world complexity. Yet the code stays minimal. You're all set!" 
-     data-es="Párrafo final, número diez. Gracias por leer este largo ejemplo. Esto muestra la complejidad del mundo real. Aun así, el código se mantiene mínimo. ¡Estás listo!"></p>
-
-  <button id="langToggle">Español</button>
-
+  
+  <h1 class="translatable" data-en="KIRON ANG" data-es="KIRÓN ANG"></h1>
+  
+  <button class="translatable" data-en="Ver versión en español." data-es="View English version."></button>
+  
   <script>
-    const toggleButton = document.getElementById('langToggle');
+    const toggleButton = document.querySelector('button');
     const elements = document.querySelectorAll('.translatable');
     const html = document.documentElement;
-
+    
     let currentLang = 'en';
-
+    
     // Load English content immediately on page load
     window.addEventListener('DOMContentLoaded', () => {
       elements.forEach(el => {
@@ -72,19 +34,17 @@
         }
       });
     });
-
+    
     toggleButton.addEventListener('click', () => {
       currentLang = currentLang === 'en' ? 'es' : 'en';
       html.lang = currentLang;
-
+      
       elements.forEach(el => {
         const translation = el.dataset[currentLang];
         if (translation) {
           el.textContent = translation;
         }
       });
-
-      toggleButton.textContent = currentLang === 'en' ? 'Español' : 'English';
     });
   </script>
 </body>
