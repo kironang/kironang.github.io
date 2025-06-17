@@ -1,2 +1,1 @@
-# kironang.github.io
-Kiron Ang's website!
+See Kiron Ang's website at https://kironang.github.io
