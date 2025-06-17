@@ -16,21 +16,21 @@
 <body>
   <h1 class="translation" data-en="KIRON ANG" data-es="KIRÓN ANG"></h1>
   <button class="translation" data-en="Presione aquí para el texto en español." data-es="Press here for the text in English."></button>
+  <p class="translation" data-en="My name is Kiron, and I am an undergraduate student at Baylor University!" data-es="Me llamo Kiron y soy estudiante de pregrado en la Universidad de Baylor."></p>
+  <p class="translation" data-en="Currently, I live in the city of Waco." data-es="Actualmente, vivo en la ciudad de Waco."></p>
   <script>
     const button = document.querySelector('button');
     const translation = document.querySelectorAll('.translation');
     const html = document.documentElement;
-    let currentLang = html.lang;
     window.addEventListener('DOMContentLoaded', () => {
       translation.forEach(t => {
         t.textContent = t.dataset.en;
       });
     });
     button.addEventListener('click', () => {
-      currentLang = currentLang === 'en' ? 'es' : 'en';
-      html.lang = currentLang;
+      html.lang = html.lang === 'en' ? 'es' : 'en';
       translation.forEach(t => {
-        const translation = t.dataset[currentLang];
+        const translation = t.dataset[html.lang];
         t.textContent = translation;
       });
     });
