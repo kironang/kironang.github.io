@@ -14,36 +14,24 @@
   </style>
 </head>
 <body>
-  
-  <h1 class="translatable" data-en="KIRON ANG" data-es="KIRÓN ANG"></h1>
-  
-  <button class="translatable" data-en="Ver versión en español." data-es="View English version."></button>
-  
+  <h1 class="translation" data-en="KIRON ANG" data-es="KIRÓN ANG"></h1>
+  <button class="translation" data-en="Presione aquí para el texto en español." data-es="Press here for the text in English."></button>
   <script>
-    const toggleButton = document.querySelector('button');
-    const elements = document.querySelectorAll('.translatable');
+    const button = document.querySelector('button');
+    const translation = document.querySelectorAll('.translation');
     const html = document.documentElement;
-    
-    let currentLang = 'en';
-    
-    // Load English content immediately on page load
+    let currentLang = html.lang;
     window.addEventListener('DOMContentLoaded', () => {
-      elements.forEach(el => {
-        if (el.dataset.en) {
-          el.textContent = el.dataset.en;
-        }
+      translation.forEach(t => {
+        t.textContent = t.dataset.en;
       });
     });
-    
-    toggleButton.addEventListener('click', () => {
+    button.addEventListener('click', () => {
       currentLang = currentLang === 'en' ? 'es' : 'en';
       html.lang = currentLang;
-      
-      elements.forEach(el => {
-        const translation = el.dataset[currentLang];
-        if (translation) {
-          el.textContent = translation;
-        }
+      translation.forEach(t => {
+        const translation = t.dataset[currentLang];
+        t.textContent = translation;
       });
     });
   </script>
