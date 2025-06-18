@@ -14,26 +14,7 @@
   </style>
 </head>
 <body>
-  <h1 class="translation" data-en="KIRON ANG" data-es="KIRÓN ANG"></h1>
-  <button class="translation" data-en="Presione aquí para el texto en español." data-es="Press here for the text in English."></button>
-  <p class="translation" data-en="My name is Kiron, and I am an undergraduate student at Baylor University!" data-es="Me llamo Kirón y soy estudiante de pregrado en la Universidad de Baylor."></p>
-  <p class="translation" data-en="Currently, I live in the city of Waco." data-es="Actualmente, vivo en la ciudad de Waco."></p>
-  <script>
-    const button = document.querySelector('button');
-    const translation = document.querySelectorAll('.translation');
-    const html = document.documentElement;
-    window.addEventListener('DOMContentLoaded', () => {
-      translation.forEach(t => {
-        t.textContent = t.dataset.en;
-      });
-    });
-    button.addEventListener('click', () => {
-      html.lang = html.lang === 'en' ? 'es' : 'en';
-      translation.forEach(t => {
-        const translation = t.dataset[html.lang];
-        t.textContent = translation;
-      });
-    });
-  </script>
+  <h1>KIRON ANG</h1>
+  <p>Hi! My name is Kiron, with a hard "K", an "I" sound like in "eye", and a "ron" sound that rhymes with "lawn". I'm currently an undergraduate student at Baylor University, although I plan to graduate soon; In fact, I will graduate in December 2025 with a Bachelors of Science in Informatics!</p>
 </body>
 </html>
