@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kiron Ang's Portfolio - Bioinformatics major at Baylor University">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kiron Ang's Portfolio - Bioinformatics major at Baylor University" />
   <title>Kiron Ang | Portfolio</title>
   <style>
     :root {
       --bg: #1a202c;
       --primary: #ffffff;
-      --accent: #63b3ed;
       --card-bg: #2d3748;
       --radius: 1rem;
-      --shadow: 0 10px 15px rgba(0,0,0,0.08);
+      --shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
       --highlight: #f6ad55;
     }
 
@@ -28,31 +27,27 @@
       color: var(--primary);
       line-height: 1.6;
       padding: 1rem;
-      position: relative;
       overflow-x: hidden;
       cursor: none;
     }
 
-    header, footer {
+    header, footer, h2 {
       text-align: center;
     }
 
-    h1, h2, h3 {
+    h1, h2 {
       color: var(--primary);
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 1rem;
     }
 
     .container {
       max-width: 900px;
-      margin: auto;
+      width: 100%;
+      margin: 0 auto;
     }
 
     .section {
       margin: 2.5rem 0;
+      text-align: center;
     }
 
     .card {
@@ -61,44 +56,74 @@
       box-shadow: var(--shadow);
       padding: 1.5rem;
       margin-bottom: 2rem;
+      text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
     }
 
     .card h3 {
       margin-bottom: 0.5rem;
     }
 
-    .projects-grid {
+    .projects-grid,
+    .image-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
+      justify-items: center;
+      width: 100%;
     }
 
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-    }
-
-    img {
+    .image-grid img {
       width: 100%;
       height: auto;
       border-radius: var(--radius);
       transition: transform 0.3s ease;
+      object-fit: cover;
     }
 
-    img:hover {
+    .image-grid img:hover {
       transform: scale(1.05);
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 150px;
+      background-color: var(--card-bg);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      font-weight: bold;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .media-placeholder {
+      background-color: var(--card-bg);
+      color: var(--primary);
+      padding: 1rem;
+      border-radius: var(--radius);
+      text-align: center;
+      margin-top: 1rem;
     }
 
     audio {
       width: 100%;
       margin-top: 0.5rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 70vh;
+      max-height: 500px;
+      border: none;
+      border-radius: var(--radius);
     }
 
     a {
@@ -130,29 +155,6 @@
       transition: transform 0.1s ease-out;
     }
 
-    iframe {
-      width: 100%;
-      height: 70vh;
-      max-height: 500px;
-      border: none;
-    }
-
-    .download-btn {
-      display: inline-block;
-      background-color: var(--highlight);
-      color: var(--bg);
-      padding: 0.5rem 1rem;
-      border-radius: var(--radius);
-      margin-top: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .download-btn:hover {
-      background-color: #e89630;
-    }
-
     @media (max-width: 600px) {
       iframe {
         height: 80vh;
@@ -176,7 +178,10 @@
       <h1>Kiron Ang</h1>
       <p>Bioinformatics Major at Baylor University</p>
       <p>Graduating December 2025 — Actively seeking full-time opportunities</p>
-      <p><a href="mailto:kiron_ang1@baylor.edu">kiron_ang1@baylor.edu</a> | <a href="https://github.com/kironang" target="_blank" rel="noopener">github.com/kironang</a></p>
+      <p>
+        <a href="mailto:kiron_ang1@baylor.edu">kiron_ang1@baylor.edu</a> |
+        <a href="https://github.com/kironang" target="_blank" rel="noopener">github.com/kironang</a>
+      </p>
     </div>
   </header>
 
@@ -184,16 +189,18 @@
     <section class="section">
       <h2>Personal Information</h2>
       <div class="card">
-        <p>I was born and raised in the Rio Grande Valley. As such, it has been culturally jarring to live in the city of Waco as I pursue my Bachelors of Science in Informatics at Baylor University. However, I am content with everything that I've learned in Texas, and I would be open to moving elsewhere for work. With proficiency in several spoken and computational languages, people will find me to be culturally and generally competent.</p>
+        <p>
+          I was born and raised in the Rio Grande Valley. As such, it has been culturally jarring to live in the city of Waco as I pursue my Bachelors of Science in Informatics at Baylor University. However, I am content with everything that I've learned in Texas, and I would be open to moving elsewhere for work. With proficiency in several spoken and computational languages, people will find me to be culturally and generally competent.
+        </p>
       </div>
     </section>
 
     <section class="section">
       <h2>Pictures from my DSLR</h2>
       <div class="image-grid">
-        <img src="/1.jpg" alt="PLACEHOLDER">
-        <img src="/2.jpg" alt="PLACEHOLDER">
-        <img src="/3.jpg" alt="PLACEHOLDER">
+        <img src="/1.jpg" alt="A photo from my DSLR" onerror="this.outerHTML='<div class=\'image-placeholder\'>Image not available</div>';">
+        <img src="/2.jpg" alt="A photo from my DSLR" onerror="this.outerHTML='<div class=\'image-placeholder\'>Image not available</div>';">
+        <img src="/3.jpg" alt="A photo from my DSLR" onerror="this.outerHTML='<div class=\'image-placeholder\'>Image not available</div>';">
       </div>
     </section>
 
@@ -216,18 +223,18 @@
     <section class="section">
       <h2>Pieces</h2>
       <div class="card">
-        <h3>"Echoes of Light"</h3>
-        <p>An original ambient composition inspired by bioluminescent organisms.</p>
-        <audio controls>
-          <source src="/0.mp3" type="audio/mpeg">
+        <h3>PLACEHOLDER</h3>
+        <p>PLACEHOLDER</p>
+        <audio controls onerror="this.outerHTML='<div class=\'media-placeholder\'>Audio not available</div>';">
+          <source src="/0.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
       </div>
       <div class="card">
         <h3>PLACEHOLDER</h3>
         <p>PLACEHOLDER</p>
-        <audio controls>
-          <source src="/1.mp3" type="audio/mpeg">
+        <audio controls onerror="this.outerHTML='<div class=\'media-placeholder\'>Audio not available</div>';">
+          <source src="/1.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
       </div>
@@ -236,7 +243,7 @@
     <section class="section">
       <h2>Proof of Coursework</h2>
       <div class="card">
-        <iframe title="Transcript PDF" src="/transcript.pdf"></iframe>
+        <iframe title="Transcript PDF" src="/0.pdf" onerror="this.outerHTML='<div class=\'media-placeholder\'>PDF not available</div>';"></iframe>
       </div>
     </section>
   </main>
