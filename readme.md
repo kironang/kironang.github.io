@@ -1,1 +1,1 @@
-See Kiron Ang's accessible website at https://kironang.github.io
+See Kiron Ang's website at https://kironang.github.io
