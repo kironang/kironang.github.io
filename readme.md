@@ -1,1 +1,1 @@
-See Kiron Ang's website at https://kironang.github.io
+This repository contains the files needed to display the website at https://kironang.github.io
