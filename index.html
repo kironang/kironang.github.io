@@ -7,15 +7,13 @@
   <title>Kiron Ang | Portfolio</title>
   <style>
     :root {
-      --bg: #f5f7fa;
-      --primary: #2b2d42;
-      --accent: #8d99ae;
-      --accent-light: #edf2f4;
-      --text: #2b2d42;
-      --card-bg: #ffffff;
+      --bg: #2a4365; /* deep slate blue background */
+      --primary: #ffffff; /* white text */
+      --accent: #90cdf4; /* soft blue for highlights */
+      --card-bg: #334e68; /* darker blue cards */
       --radius: 1rem;
       --shadow: 0 10px 15px rgba(0,0,0,0.08);
-      --highlight: #ef476f;
+      --highlight: #f6ad55; /* orange-gold accent */
     }
 
     * {
@@ -27,7 +25,7 @@
     body {
       font-family: system-ui, sans-serif;
       background-color: var(--bg);
-      color: var(--text);
+      color: var(--primary);
       line-height: 1.6;
       padding: 1rem;
       position: relative;
@@ -38,11 +36,16 @@
     header, footer {
       text-align: center;
       padding: 2rem 1rem;
-      background-color: var(--accent-light);
     }
 
     h1, h2, h3 {
       color: var(--primary);
+    }
+
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-bottom: 1rem;
     }
 
     .container {
@@ -112,8 +115,8 @@
       position: absolute;
       background-color: var(--highlight);
       border-radius: 50%;
-      width: 12px;
-      height: 12px;
+      width: 10px;
+      height: 10px;
       transform: translate(-50%, -50%);
       transition: transform 0.1s ease-out;
     }
@@ -139,9 +142,12 @@
   </style>
 </head>
 <body>
+  <!-- Mouse cursor circle effect -->
   <div class="cursor-effect" aria-hidden="true">
     <div class="circle" id="circle"></div>
   </div>
+
+  <!-- Page header with name and contact info -->
   <header>
     <div class="container">
       <h1>Kiron Ang</h1>
@@ -151,7 +157,9 @@
     </div>
   </header>
 
+  <!-- Main content -->
   <main class="container">
+    <!-- About section -->
     <section class="section">
       <h2>About Me</h2>
       <div class="card">
@@ -159,6 +167,7 @@
       </div>
     </section>
 
+    <!-- Photography section -->
     <section class="section">
       <h2>Photography</h2>
       <div class="image-grid">
@@ -168,6 +177,7 @@
       </div>
     </section>
 
+    <!-- Projects section -->
     <section class="section">
       <h2>Projects</h2>
       <div class="projects-grid">
@@ -184,6 +194,7 @@
       </div>
     </section>
 
+    <!-- Music section -->
     <section class="section">
       <h2>Music</h2>
       <div class="card">
@@ -204,6 +215,7 @@
       </div>
     </section>
 
+    <!-- Transcript section -->
     <section class="section">
       <h2>Transcript</h2>
       <div class="card">
@@ -213,10 +225,12 @@
     </section>
   </main>
 
+  <!-- Page footer -->
   <footer>
     <p>&copy; 2025 Kiron Ang. All rights reserved.</p>
   </footer>
 
+  <!-- JavaScript for custom mouse cursor -->
   <script>
     const circle = document.getElementById('circle');
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
