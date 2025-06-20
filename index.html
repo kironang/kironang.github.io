@@ -3,131 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kiron Ang's Portfolio - Bioinformatics major at Baylor University" />
-  <title>Kiron Ang | Portfolio</title>
+  <title>Kiron Ang</title>
   <style>
     :root {
-      --bg: #1a202c;
-      --primary: #ffffff;
-      --card-bg: #2d3748;
-      --radius: 1rem;
-      --shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
-      --highlight: #f6ad55;
+      --bg-color: #000;
+      --text-color: #fff;
+      --accent-color: #00ffff;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --max-width: 700px;
+      --spacing: 1.5rem;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      font-family: sans-serif;
-      background-color: var(--bg);
-      color: var(--primary);
+      margin: 0;
+      padding: var(--spacing);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-family);
       line-height: 1.6;
-      padding: 1rem;
-      overflow-x: hidden;
-      cursor: none;
-    }
-
-    header, footer, h2 {
-      text-align: center;
-    }
-
-    h1, h2 {
-      color: var(--primary);
+      display: flex;
+      justify-content: center;
     }
 
     .container {
-      max-width: 900px;
+      max-width: var(--max-width);
       width: 100%;
-      margin: 0 auto;
     }
 
-    .section {
-      margin: 2.5rem 0;
-      text-align: center;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .card h3 {
+    h1 {
+      font-size: 2rem;
       margin-bottom: 0.5rem;
     }
 
-    .projects-grid,
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      justify-items: center;
-      width: 100%;
-    }
-
-    .image-grid img {
-      width: 100%;
-      height: auto;
-      border-radius: var(--radius);
-      transition: transform 0.3s ease;
-      object-fit: cover;
-    }
-
-    .image-grid img:hover {
-      transform: scale(1.05);
-    }
-
-    .image-placeholder {
-      width: 100%;
-      height: 150px;
-      background-color: var(--card-bg);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: var(--radius);
-      font-weight: bold;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    .media-placeholder {
-      background-color: var(--card-bg);
-      color: var(--primary);
-      padding: 1rem;
-      border-radius: var(--radius);
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    audio {
-      width: 100%;
-      margin-top: 0.5rem;
-    }
-
-    iframe {
-      width: 100%;
-      height: 70vh;
-      max-height: 500px;
-      border: none;
-      border-radius: var(--radius);
-    }
-
     a {
-      color: var(--highlight);
+      color: var(--accent-color);
       text-decoration: none;
     }
 
@@ -135,135 +48,43 @@
       text-decoration: underline;
     }
 
-    .cursor-effect {
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      width: 100vw;
-      height: 100vh;
-      z-index: 9999;
+    .info {
+      margin-bottom: var(--spacing);
     }
 
-    .circle {
-      position: absolute;
-      background-color: var(--highlight);
-      border-radius: 50%;
-      width: 8px;
-      height: 8px;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s ease-out;
+    .download-button {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
 
-    @media (max-width: 600px) {
-      iframe {
-        height: 80vh;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        transition: none !important;
-      }
+    .download-button:hover {
+      background-color: #00cccc;
     }
   </style>
 </head>
 <body>
-  <div class="cursor-effect" aria-hidden="true">
-    <div class="circle" id="circle"></div>
-  </div>
-
-  <header>
-    <div class="container">
-      <h1>Kiron Ang</h1>
-      <p>Bioinformatics Major at Baylor University</p>
-      <p>Graduating December 2025 — Actively seeking full-time opportunities</p>
-      <a href="mailto:kiron_ang1@baylor.edu">kiron_ang1@baylor.edu</a>
-      <a href="https://github.com/kironang" target="_blank" rel="noopener">github.com/kironang</a>
+  <div class="container">
+    <h1>Kiron Ang</h1>
+    <div class="info">
+      <p><strong>Email:</strong> <a href="mailto:kiron_ang1@baylor.edu">kiron_ang1@baylor.edu</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/kironang" target="_blank">github.com/kironang</a></p>
+      <p><strong>Phone:</strong> <a href="tel:9563793223">956-379-3223</a></p>
     </div>
-  </header>
 
-  <main class="container">
-    <section class="section">
-      <h2>PERSONAL INFORMATION</h2>
-      <div class="card">
-        <p>
-          I was born and raised in the Rio Grande Valley. As such, it has been culturally jarring to live in the city of Waco as I pursue my Bachelors of Science in Informatics at Baylor University. However, I am content with everything that I've learned in Texas, and I would be open to moving elsewhere for work. With proficiency in several spoken and computational languages, people will find me to be culturally and generally competent.
-        </p>
-      </div>
-    </section>
+    <p>
+      I was born and raised in the Rio Grande Valley. As such, it has been culturally jarring to live in the city of Waco as I pursue my Bachelors of Science in Informatics at Baylor University. However, I am content with everything that I've learned in Texas, and I would be open to moving elsewhere for work. With proficiency in several spoken and computational languages, people will find me to be culturally and generally competent.
+    </p>
 
-    <section class="section">
-      <h2>PICTURES FROM MY DSLR CAMERA</h2>
-      <div class="image-grid">
-        <img src="1.jpg" alt="A photo from my DSLR" onerror="this.outerHTML='<div class=\'image-placeholder\'>Image not available</div>';">
-        <img src="2.jpg" alt="A photo from my DSLR" onerror="this.outerHTML='<div class=\'image-placeholder\'>Image not available</div>';">
-        <img src="3.jpg" alt="A photo from my DSLR" onerror="this.outerHTML='<div class=\'image-placeholder\'>Image not available</div>';">
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>PROGRAMMING PROJECTS</h2>
-      <div class="projects-grid">
-        <div class="card">
-          <h3>My Website</h3>
-          <p>I created the simple and accessible website you're seeing now to showcase my work.
-            <a href="https://github.com/kironang/kironang.github.io" target="_blank" rel="noopener">View the code on GitHub.</a>
-          </p>
-        </div>
-        <div class="card">
-          <h3>McLennan County Public Health Dashboard</h3>
-          <p>I used the R programming language to create an online public health dashboard. This was part of my summer internship with the Waco-McLennan County Public Health District.
-            <a href="https://kironang.github.io" target="_blank" rel="noopener">Unfortunately, this is not published yet. Check again in August 2025.</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>PIECES COMPOSED WITH MUSIC SOFTWARE</h2>
-      <div class="card">
-        <h3>PLACEHOLDER</h3>
-        <p>PLACEHOLDER</p>
-        <audio controls>
-          <source src="0.mp3" type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
-      </div>
-      <div class="card">
-        <h3>PLACEHOLDER</h3>
-        <p>PLACEHOLDER</p>
-        <audio controls>
-          <source src="1.mp3" type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>PROOF THAT I'M A BAYLOR BEAR</h2>
-      <div class="card">
-        <object type="application/pdf" data="0.pdf"></object>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Kiron Ang. All rights reserved.</p>
-  </footer>
-
-  <script>
-    const circle = document.getElementById('circle');
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (!prefersReducedMotion) {
-      document.addEventListener('mousemove', e => {
-        circle.style.left = `${e.clientX}px`;
-        circle.style.top = `${e.clientY}px`;
-      });
-    } else {
-      circle.style.display = 'none';
-    }
-  </script>
+    <p>
+      <a class="download-button" href="0.pdf" download>Download Transcript (PDF)</a>
+    </p>
+  </div>
 </body>
 </html>
